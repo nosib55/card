@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romantic Wedding Invitation ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+:root {
+  --wine: #791c37;
+  --rose: #bd526e;
+  --gold: #d8b477;
+  --cream: #fff8ef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 78px 14px 34px;
+  overflow-x: hidden;
+  background: radial-gradient(ellipse at top, #632c48, #291525 60%, #130e19);
+  color: var(--cream);
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #f6d7aa 1px, transparent 1.5px),
+    radial-gradient(circle, #f6b4c6 1px, transparent 1.5px);
+  background-size: 83px 97px, 127px 131px;
+  background-position: 0 0, 35px 52px;
+  opacity: .4;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  to { opacity: .8; }
+}
+
+.top-heading {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(10px, env(safe-area-inset-left));
+  right: max(10px, env(safe-area-inset-right));
+  text-align: center;
+  color: #f3d6a3;
+  font-size: clamp(10px, 2.8vw, 12px);
+  letter-spacing: clamp(1px, .7vw, 3px);
+}
+
+.scene {
+  position: relative;
+  width: min(390px, 100%);
+  min-height: 520px;
+  perspective: 1200px;
+}
+
+/* Name input page */
+
+.name-form {
+  position: relative;
+  z-index: 12;
+  width: 100%;
+  padding: clamp(24px, 7vw, 32px) clamp(16px, 5vw, 24px);
+  text-align: center;
+  color: #792340;
+  background: linear-gradient(145deg, #fffaf2, #f5dce2);
+  border: 2px solid var(--gold);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px #0005;
+}
+
+.form-rose {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.name-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-bottom: 14px;
+  color: #8a2444;
+}
+
+.name-form .subtitle {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.groom {
+  display: inline-block;
+  margin: 12px 0;
+  padding: 7px 20px;
+  border: 1px solid #d8b477;
+  border-radius: 30px;
+  color: #8a2444;
+  font-weight: 700;
+}
+
+.name-form label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: 600;
+}
+
+.name-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid #c78b9d;
+  border-radius: 10px;
+  background: white;
+  color: #542236;
+  font: inherit;
+  font-size: 16px;
+  outline-color: #8a2444;
+}
+
+.name-form button {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #a32d50, #711c3a);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+
+.name-form button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.form-note {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #9d5266;
+}
+
+.error {
+  color: #b42342;
+  font-size: 12px;
+  margin-top: 8px;
+  min-height: 18px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Envelope */
+
+.envelope {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  width: 100%;
+  height: 238px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, transform .8s, visibility .5s;
+  filter: drop-shadow(0 18px 25px #0006);
+}
+
+.envelope.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.env-back {
+  position: absolute;
+  inset: 0;
+  background: #dca4a4;
+  border: 1px solid #f5d7b0;
+  border-radius: 5px;
+}
+
+.env-left {
+  position: absolute;
+  inset: 0;
+  background: #b9687e;
+  clip-path: polygon(0 0, 51% 53%, 0 100%);
+}
+
+.env-right {
+  position: absolute;
+  inset: 0;
+  background: #a74c69;
+  clip-path: polygon(100% 0, 49% 53%, 100% 100%);
+}
+
+.env-bottom {
+  position: absolute;
+  inset: 0;
+  background: #d78d9f;
+  clip-path: polygon(0 100%, 50% 42%, 100% 100%);
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #f2d0ca;
+  clip-path: polygon(0 0, 100% 0, 50% 57%);
+  transform-origin: top;
+  transition: transform .8s ease;
+  z-index: 7;
+}
+
+.seal {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 8;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #a42d50, #69152e);
+  border: 2px solid #f6d6a0;
+  box-shadow: 0 3px 14px #60142e77;
+  font-size: 29px;
+  color: #ffe3b1;
+  transition: opacity .4s;
+}
+
+.hint {
+  position: absolute;
+  top: 370px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #f7d9ae;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .4s;
+  animation: bob 1.7s infinite ease-in-out;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-5px); }
+}
+
+/* Wedding invitation */
+
+.invitation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 0;
+  padding: clamp(22px, 6vw, 30px) clamp(14px, 4vw, 22px) 22px;
+  text-align: center;
+  color: #633144;
+  background:
+    radial-gradient(ellipse at top, #fffdf8, transparent 60%),
+    linear-gradient(150deg, #fff9f0, #f9e7df);
+  border: 3px double var(--gold);
+  outline: 1px solid #e9c8aa;
+  outline-offset: -9px;
+  border-radius: 5px;
+  box-shadow: 0 12px 35px #0005;
+  opacity: 0;
+  transform: translateY(65px) scale(.8);
+  transition: all 1s cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.rose-decoration {
+  color: #a93858;
+  font-size: 23px;
+  letter-spacing: 5px;
+  margin: 2px 0 7px;
+}
+
+.eyebrow {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #a16a48;
+}
+
+.invitation h1 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  color: #8a2444;
+  font-size: clamp(34px, 9vw, 42px);
+  line-height: 1.35;
+  margin: 2px 0;
+}
+
+.invitation h2 {
+  font-size: 21px;
+  color: #842744;
+  margin: 5px 0;
+}
+
+.intro {
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 7px 0;
+}
+
+.couple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(5px, 2vw, 10px);
+  margin: 10px 0;
+}
+
+.couple .name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 4.5vw, 22px);
+  color: #8a2444;
+  line-height: 1.3;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.conjunction {
+  flex: 0 0 auto;
+  width: clamp(19px, 5vw, 24px);
+  height: clamp(19px, 5vw, 24px);
+  fill: #fff8ef;
+  stroke: #c42d51;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 1px 1px #d8b47788);
+}
+
+.details {
+  border-top: 1px solid #d9b887;
+  border-bottom: 1px solid #d9b887;
+  padding: 9px 0;
+  margin: 10px 0;
+}
+
+.details p {
+  font-size: 12px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.closing {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.signature {
+  color: #8a2444;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.replay {
+  position: absolute;
+  bottom: -27px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: 1px solid #e6c38e;
+  border-radius: 30px;
+  padding: 7px 17px;
+  color: #f8dcb0;
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.scene.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.open .seal {
+  opacity: 0;
+}
+
+.open .invitation {
+  position: relative;
+  top: auto;
+  left: auto;
+  opacity: 1;
+  transform: translateY(-12px) scale(1);
+  z-index: 9;
+  pointer-events: auto;
+}
+
+.open .envelope {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(150px) scale(.8);
+  pointer-events: none;
+}
+
+.open .hint {
+  opacity: 0;
+}
+
+.open .replay {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin: 14px auto 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Floating hearts and roses */
+
+.float {
+  position: fixed;
+  bottom: -35px;
+  pointer-events: none;
+  z-index: 20;
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width: 360px) {
+  body {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .scene {
+    min-height: 500px;
+  }
+
+  .invitation {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .intro, .details p, .closing {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="ambient"></div>
+<div class="top-heading">♡ A BEAUTIFUL BEGINNING ♡</div>
+
+<main class="scene" id="scene">
+  <section class="name-form" id="nameForm">
+    <div class="form-rose">🌹 💍 🌹</div>
+    <h2>Wedding Invitation</h2>
+    <p class="subtitle">
+      ভালোবাসার একটি নতুন গল্প শুরু হোক ❤️<br>
+      Enter the bride's name to continue.
+    </p>
+    <div class="groom">🤵 Groom: NOSIB</div>
+
+    <form id="brideForm">
+      <label for="brideName">কনের নাম লিখুন / Bride's Name</label>
+      <input
+        type="text"
+        id="brideName"
+        placeholder="Enter bride's name..."
+        maxlength="50"
+        autocomplete="off"
+        lang="en"
+        title="Use English letters only"
+      >
+      <p class="error" id="errorMessage" aria-live="polite"></p>
+      <button type="submit" id="openWedding">Open Wedding Card 💌</button>
+    </form>
+
+    <p class="form-note">🌹 A day of love, joy and togetherness 🌹</p>
+  </section>
+
+  <button
+    type="button"
+    class="envelope"
+    id="envelope"
+    aria-label="Open wedding invitation"
+    tabindex="-1"
+  >
+    <span class="env-back"></span>
+    <span class="env-left"></span>
+    <span class="env-right"></span>
+    <span class="env-bottom"></span>
+    <span class="flap"></span>
+    <span class="seal">♥</span>
+  </button>
+
+  <p class="hint" id="hint">💌 খামটি খুলতে ক্লিক করো 💌</p>
+
+  <section class="invitation" id="invitation">
+    <div class="rose-decoration">🌹 ❦ 🌹</div>
+    <p class="eyebrow">Together with our families</p>
+    <h1>Wedding Invitation</h1>
+    <h2>শুভ বিবাহ</h2>
+    <p class="intro">
+      আনন্দ ও ভালোবাসার এই শুভক্ষণে<br>
+      আমাদের নতুন জীবনের শুরুতে<br>
+      আপনাকে জানাই সাদর আমন্ত্রণ।
+    </p>
+
+    <div class="couple">
+      <div class="name" id="groomName">NOSIB</div>
+      <svg class="conjunction" aria-label="and" role="img" viewBox="0 0 24 24">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+      </svg>
+      <div class="name" id="displayBrideName">Bride's Name</div>
+    </div>
+
+    <div class="details">
+      <p>💍 A New Journey Begins 💍</p>
+      <p>📅 তারিখ / Date: <span id="weddingDate"></span></p>
+      <p>🕰️ সময় / Time: <span id="weddingTime"></span></p>
+      <p>📍 স্থান / Venue: <span id="weddingVenue"></span></p>
+    </div>
+
+    <p class="closing">
+      আপনার উপস্থিতি ও দোয়া আমাদের<br>
+      আনন্দকে পূর্ণতা দেবে।<br>
+      You are warmly invited to celebrate<br>
+      our special day with us.
+    </p>
+    <p class="signature">With Love, Happiness &amp; Blessings ♡</p>
+    <div class="rose-decoration">❦ 🌹 ❦</div>
+  </section>
+
+  <button type="button" class="replay" id="replay" tabindex="-1">
+    ↻ আবার শুরু করুন / Start Again
+  </button>
+</main>
+
+<script>
+const scene = document.getElementById("scene");
+const brideForm = document.getElementById("brideForm");
+const nameForm = document.getElementById("nameForm");
+const brideNameInput = document.getElementById("brideName");
+const errorMessage = document.getElementById("errorMessage");
+const envelope = document.getElementById("envelope");
+const hint = document.getElementById("hint");
+const replay = document.getElementById("replay");
+const displayBrideName = document.getElementById("displayBrideName");
+const weddingDate = document.getElementById("weddingDate");
+const weddingTime = document.getElementById("weddingTime");
+const weddingVenue = document.getElementById("weddingVenue");
+
+const weddingTimes = ["4:00 PM", "5:30 PM", "6:00 PM", "7:00 PM", "7:30 PM"];
+const weddingVenues = [
+  "Rose Garden Community Center",
+  "Royal Palace Convention Hall",
+  "Lakeview Convention Center",
+  "Gardenia Convention Hall",
+  "Grand Celebration Center"
+];
+let brideName = "";
+
+function randomItem(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function setRandomWeddingDetails() {
+  const date = new Date();
+  date.setDate(date.getDate() + 30 + Math.floor(Math.random() * 336));
+
+  weddingDate.textContent = new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  }).format(date);
+  weddingTime.textContent = randomItem(weddingTimes);
+  weddingVenue.textContent = randomItem(weddingVenues);
+}
+
+function prepareWeddingCard(event) {
+  event.preventDefault();
+  const enteredName = brideNameInput.value.trim();
+
+  if (!/^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/.test(enteredName)) {
+    errorMessage.textContent = enteredName
+      ? "Please use English letters only."
+      : "দয়া করে কনের নাম লিখুন ❤️";
+    brideNameInput.focus();
+    return;
+  }
+
+  brideName = enteredName;
+  displayBrideName.textContent = brideName;
+  setRandomWeddingDetails();
+  errorMessage.textContent = "";
+  nameForm.classList.add("hidden");
+  envelope.classList.add("visible");
+  envelope.tabIndex = 0;
+  hint.style.opacity = "1";
+  createFloatingHearts();
+}
+
+function openInvitation() {
+  if (!envelope.classList.contains("visible")) return;
+  scene.classList.add("open");
+  hint.style.opacity = "0";
+  replay.tabIndex = 0;
+  createFloatingHearts();
+}
+
+function restartInvitation() {
+  scene.classList.remove("open");
+  envelope.classList.remove("visible");
+  envelope.tabIndex = -1;
+  nameForm.classList.remove("hidden");
+  replay.tabIndex = -1;
+  hint.style.opacity = "0";
+  brideNameInput.value = brideName;
+  errorMessage.textContent = "";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+brideNameInput.addEventListener("input", function() {
+  const value = brideNameInput.value;
+  const filteredValue = value.replace(/[^A-Za-z '-]/g, "");
+  if (value !== filteredValue) {
+    brideNameInput.value = filteredValue;
+    errorMessage.textContent = "Please use English letters only.";
+  } else {
+    errorMessage.textContent = "";
+  }
+});
+
+brideForm.addEventListener("submit", prepareWeddingCard);
+envelope.addEventListener("click", openInvitation);
+envelope.addEventListener("keydown", function(event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openInvitation();
+  }
+});
+replay.addEventListener("click", restartInvitation);
+
+function createFloatingHearts() {
+  const symbols = ["♥", "♡", "🌹", "💗", "✨"];
+
+  for (let i = 0; i < 16; i++) {
+    setTimeout(() => {
+      const item = document.createElement("span");
+      item.className = "float";
+      item.textContent = randomItem(symbols);
+      item.style.left = Math.random() * 100 + "vw";
+      item.style.fontSize = (15 + Math.random() * 19) + "px";
+      item.style.color = randomItem(["#ff9db8", "#f7d59d", "#fff0f4"]);
+      item.style.animationDuration = (3 + Math.random() * 4) + "s";
+      document.body.appendChild(item);
+      setTimeout(() => item.remove(), 7500);
+    }, i * 90);
+  }
+}
+</script>
+</body>
+</html>
